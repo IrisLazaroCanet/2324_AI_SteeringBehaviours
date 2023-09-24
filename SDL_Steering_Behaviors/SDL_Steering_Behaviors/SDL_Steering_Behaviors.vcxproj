@@ -138,6 +138,7 @@
     <ClInclude Include="SceneFlee.h" />
     <ClInclude Include="SceneSeek.h" />
     <ClInclude Include="SDL_SimpleApp.h" />
+    <ClInclude Include="SeekBehavior.h" />
     <ClInclude Include="SteeringBehavior.h" />
     <ClInclude Include="utils.h" />
     <ClInclude Include="Vector2D.h" />
@@ -148,6 +149,7 @@
     <ClCompile Include="SceneFlee.cpp" />
     <ClCompile Include="SceneSeek.cpp" />
     <ClCompile Include="SDL_SimpleApp.cpp" />
+    <ClCompile Include="SeekBehavior.cpp" />
     <ClCompile Include="SteeringBehavior.cpp" />
     <ClCompile Include="utils.cpp" />
   </ItemGroup>

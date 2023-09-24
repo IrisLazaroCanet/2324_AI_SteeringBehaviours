@@ -7,10 +7,13 @@
 #include "Vector2D.h"
 #include "utils.h"
 #include "SteeringBehavior.h"
+#include "SeekBehavior.h"
 
 
 class Agent
 {
+	//Friendship isn't inherited in C++, thus:
+	friend class SeekBehavior;
 	friend class SteeringBehavior;
 
 private:

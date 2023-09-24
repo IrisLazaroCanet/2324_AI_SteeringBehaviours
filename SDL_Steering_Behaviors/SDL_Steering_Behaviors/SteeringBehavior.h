@@ -10,6 +10,10 @@ public:
 	SteeringBehavior();
 	~SteeringBehavior();
 
+	virtual Vector2D CalculateForce(Agent* agent, Vector2D target, float dtime) = 0;
+	virtual Vector2D CalculateForce(Agent* agent, Agent* target, float dtime) = 0;
+
+
 	//Vector2D CalculateForce(...);
 	//Totes les classes filles estaran obligades a cridar aquesta funció
 	//Totes elles calculen una força
