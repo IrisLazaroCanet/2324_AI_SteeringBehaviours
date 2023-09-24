@@ -1,0 +1,15 @@
+﻿  Agent.cpp
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA1\SDL_Steering_Behaviors\SDL_Steering_Behaviors\Agent.h(4,10): fatal  error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  main.cpp
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA1\SDL_Steering_Behaviors\SDL_Steering_Behaviors\main.cpp(2,10): fatal  error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  SceneFlee.cpp
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA1\SDL_Steering_Behaviors\SDL_Steering_Behaviors\Scene.h(3,10): fatal  error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  SceneSeek.cpp
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA1\SDL_Steering_Behaviors\SDL_Steering_Behaviors\Scene.h(3,10): fatal  error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  SDL_SimpleApp.cpp
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA1\SDL_Steering_Behaviors\SDL_Steering_Behaviors\SDL_SimpleApp.h(3,10): fatal  error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  SteeringBehavior.cpp
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA1\SDL_Steering_Behaviors\SDL_Steering_Behaviors\Agent.h(4,10): fatal  error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  utils.cpp
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA1\SDL_Steering_Behaviors\SDL_Steering_Behaviors\utils.cpp(5,10): fatal  error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Generating Code...
