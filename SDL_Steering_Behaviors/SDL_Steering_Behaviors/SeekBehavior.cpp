@@ -1,6 +1,6 @@
 #include "SeekBehavior.h"
 
-SeekBehavior::SeekBehavior() : SteeringBehavior()
+SeekBehavior::SeekBehavior()
 {
 }
 
@@ -11,21 +11,21 @@ SeekBehavior::~SeekBehavior()
 Vector2D SeekBehavior::CalculateForce(Agent* agent, Vector2D target, float dtime)
 {
 	//Desired velocity
-	Vector2D desiredVelocity = target - agent->position;
+	Vector2D desiredVelocity = target - agent->getPosition();
 	desiredVelocity.Normalize();
-	desiredVelocity *= agent->max_velocity;
+	desiredVelocity *= agent->getMaxVelocity();
 
 	//Steering force, without acceleration
-	Vector2D steeringForce = (desiredVelocity - agent->velocity);
-	steeringForce /= agent->max_velocity;
+	Vector2D steeringForce = (desiredVelocity - agent->getVelocity());
+	steeringForce /= agent->getMaxVelocity();
 
 	//Steering force, with acceleration
-	steeringForce /= agent->mass;
+	steeringForce /= agent->getMass();
 
-	return steeringForce * agent->max_force;
+	return steeringForce * agent->getMaxForce();
 }
 
 Vector2D SeekBehavior::CalculateForce(Agent* agent, Agent* target, float dtime)
 {
-	return Seek(agent, target->position, dtime);
+	return CalculateForce(agent, target->getPosition(), dtime);
 }

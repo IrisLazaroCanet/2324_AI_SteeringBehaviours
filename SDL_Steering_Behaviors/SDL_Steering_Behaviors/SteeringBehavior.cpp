@@ -1,16 +1,7 @@
 #include "SteeringBehavior.h"
 
 
-
-SteeringBehavior::SteeringBehavior()
-{
-}
-
-
-SteeringBehavior::~SteeringBehavior()
-{
-}
-
+/*
 Vector2D SteeringBehavior::Seek(Agent *agent, Vector2D target, float dtime)
 {
 	Vector2D steering = target - agent->position;
@@ -21,6 +12,7 @@ Vector2D SteeringBehavior::Seek(Agent *agent, Vector2D target, float dtime)
 	//No volem que sigui un mètode de steeringbehaviour, sinó que sigui una classe filla a part
 	//El codi ha de ser correcte -> falta el càlcul d'acceleració
 }
+
 
 Vector2D SteeringBehavior::Seek(Agent *agent, Agent *target, float dtime)
 {
@@ -42,4 +34,5 @@ Vector2D SteeringBehavior::Flee(Agent *agent, Agent *target, float dtime)
 {
 	return Flee(agent, target->position, dtime);
 }
+*/
 

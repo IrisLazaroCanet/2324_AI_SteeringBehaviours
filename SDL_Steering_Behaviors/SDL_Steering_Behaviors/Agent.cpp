@@ -16,7 +16,7 @@ Agent::Agent() : sprite_texture(0),
 	             sprite_h(0),
 	             draw_sprite(false)
 {
-	steering_behavior = new SeekBehavior;
+	steering_behavior = new SeekBehavior();
 	//steering_behaviour = new SeekBehavior;		//EXERCICI 1
 	//steering_behaviour = new FleeBehavior;
 	//...
@@ -60,6 +60,16 @@ Vector2D Agent::getTarget()
 Vector2D Agent::getVelocity()
 {
 	return velocity;
+}
+
+float Agent::getMass()
+{
+	return mass;
+}
+
+float Agent::getMaxForce()
+{
+	return max_force;
 }
 
 float Agent::getMaxVelocity()
