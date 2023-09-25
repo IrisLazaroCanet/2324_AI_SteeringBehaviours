@@ -12,6 +12,7 @@
 class Agent
 {
 	friend class SteeringBehavior;
+	friend class SeekBehavior;
 
 private:
 	SteeringBehavior *steering_behavior;

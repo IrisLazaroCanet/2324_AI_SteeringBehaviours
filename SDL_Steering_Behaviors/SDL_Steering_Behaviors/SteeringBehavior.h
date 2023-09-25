@@ -15,8 +15,8 @@ public:
 	//Totes elles calculen una força
 	//Que la informació estigui dins la classe agent, a CalculateForce li passem *agent i float dtime si és necessari
 
-	Vector2D Seek(Agent *agent, Vector2D target, float dtime);
-	Vector2D Seek(Agent *agent, Agent *target, float dtime);
+	virtual Vector2D CalculateForces(Agent *agent, Vector2D target, float dtime);
+	virtual Vector2D CalculateForces(Agent *agent, Agent *target, float dtime);
 	Vector2D Flee(Agent *agent, Vector2D target, float dtime);
 	Vector2D Flee(Agent *agent, Agent *target, float dtime);
 	//etc...

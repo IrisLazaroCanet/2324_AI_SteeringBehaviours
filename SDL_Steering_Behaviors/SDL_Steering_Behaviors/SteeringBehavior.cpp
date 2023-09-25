@@ -11,7 +11,7 @@ SteeringBehavior::~SteeringBehavior()
 {
 }
 
-Vector2D SteeringBehavior::Seek(Agent *agent, Vector2D target, float dtime)
+Vector2D SteeringBehavior::CalculateForces(Agent *agent, Vector2D target, float dtime)
 {
 	Vector2D steering = target - agent->position;
 	steering.Normalize();
@@ -22,9 +22,9 @@ Vector2D SteeringBehavior::Seek(Agent *agent, Vector2D target, float dtime)
 	//El codi ha de ser correcte -> falta el càlcul d'acceleració
 }
 
-Vector2D SteeringBehavior::Seek(Agent *agent, Agent *target, float dtime)
+Vector2D SteeringBehavior::CalculateForces(Agent *agent, Agent *target, float dtime)
 {
-	return Seek(agent, target->position, dtime);
+	return CalculateForces(agent, target->position, dtime);
 }
 
 Vector2D SteeringBehavior::Flee(Agent *agent, Vector2D target, float dtime)
