@@ -127,11 +127,10 @@ void Agent::update(float dtime, SDL_Event *event)
 		break;
 	}
 
+	//Calculates force and acceleration
 	Vector2D steering_force = this->Behavior()->CalculateForces(this, this->getTarget(), dtime);
-
-	//Aquest codi d'acceleració no ha d'estar a la classe agent, sinó a la classe steeringbehaviour (o filla?) que s'estigui executant
-	Vector2D acceleration = steering_force / mass;
-	velocity = velocity + acceleration * dtime;
+	
+	velocity = velocity + steering_force * dtime;
 	velocity = velocity.Truncate(max_velocity);
 
 	position = position + velocity * dtime;
