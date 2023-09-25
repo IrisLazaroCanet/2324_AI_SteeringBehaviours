@@ -16,7 +16,10 @@ Agent::Agent() : sprite_texture(0),
 	             sprite_h(0),
 	             draw_sprite(false)
 {
-	steering_behavior = new SteeringBehavior;
+	//steering_behavior = new SteeringBehavior; -> CANNOT INSTANTIATE ABSTRACT CLASS
+	
+	
+	
 	//steering_behaviour = new SeekBehavior;		//EXERCICI 1
 	//steering_behaviour = new FleeBehavior;
 	//...
