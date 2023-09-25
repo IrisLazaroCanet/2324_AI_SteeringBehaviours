@@ -3,6 +3,8 @@
 #include "Scene.h"
 #include "Agent.h"
 
+#include "FleeBehavior.h"
+
 class SceneFlee :
 	public Scene
 {
