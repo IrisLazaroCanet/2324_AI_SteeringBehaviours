@@ -14,6 +14,7 @@ class Agent
 	friend class SteeringBehavior;
 	friend class SeekBehavior;
 	friend class FleeBehavior;
+	friend class WeightedBlendingBehavior;
 
 private:
 	SteeringBehavior *steering_behavior;
