@@ -32,7 +32,7 @@ Vector2D SteeringBehavior::CalculateForces(Agent *agent, Agent *target, float dt
 	return Vector2D();
 }
 */
-
+/*
 Vector2D SteeringBehavior::Flee(Agent *agent, Vector2D target, float dtime)
 {
 	Vector2D steering = agent->position - target;
@@ -48,4 +48,5 @@ Vector2D SteeringBehavior::Flee(Agent *agent, Agent *target, float dtime)
 {
 	return Flee(agent, target->position, dtime);
 }
+*/
 
