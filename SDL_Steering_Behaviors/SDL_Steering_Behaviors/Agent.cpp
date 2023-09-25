@@ -34,6 +34,23 @@ Agent::Agent() : sprite_texture(0),
 	//IMPORTANT BORRAR CARPETA .vs EN ENTREGAR LA PRÀCTICA!!
 }
 
+Agent::Agent(SteeringBehavior* _steering_behavior) : sprite_texture(0),
+													 position(Vector2D(100, 100)),
+													 target(Vector2D(1000, 100)),
+													 velocity(Vector2D(0, 0)),
+													 mass(0.5f),
+													 max_force(50),
+													 max_velocity(200),
+													 orientation(0),
+													 color({ 255,255,255,255 }),
+													 sprite_num_frames(0),
+													 sprite_w(0),
+													 sprite_h(0),
+													 draw_sprite(false)
+{
+	steering_behavior = _steering_behavior;
+}
+
 Agent::~Agent()
 {
 	if (sprite_texture)

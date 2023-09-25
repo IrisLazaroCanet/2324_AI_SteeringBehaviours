@@ -35,6 +35,7 @@ private:
 
 public:
 	Agent();
+	Agent(SteeringBehavior* _steering_behavior);
 	~Agent();
 	SteeringBehavior *Behavior();
 	Vector2D getPosition();
