@@ -3,6 +3,8 @@
 #include "Scene.h"
 #include "Agent.h"
 
+#include "SeekBehavior.h"
+
 class SceneSeek :
 	public Scene
 {

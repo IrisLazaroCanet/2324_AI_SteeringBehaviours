@@ -5,6 +5,7 @@ class Agent;
 
 class SeekBehavior : public SteeringBehavior
 {
+public:
 	SeekBehavior();
 	~SeekBehavior();
 
