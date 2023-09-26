@@ -35,6 +35,8 @@ Agent::Agent() : sprite_texture(0),
 
 	//FER UNA ÚNICA ESCENA 
 	//IMPORTANT BORRAR CARPETA .vs EN ENTREGAR LA PRÀCTICA!!
+
+
 }
 
 Agent::Agent(SteeringBehavior* _steering_behavior) : sprite_texture(0),

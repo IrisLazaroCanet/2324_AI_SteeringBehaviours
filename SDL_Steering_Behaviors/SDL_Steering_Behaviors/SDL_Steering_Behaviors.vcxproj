@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClInclude Include="Agent.h" />
     <ClInclude Include="FleeBehavior.h" />
+    <ClInclude Include="PriorityBlendingBehavior.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneFlee.h" />
     <ClInclude Include="SceneSeek.h" />
@@ -149,6 +150,7 @@
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="FleeBehavior.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PriorityBlendingBehavior.cpp" />
     <ClCompile Include="SceneFlee.cpp" />
     <ClCompile Include="SceneSeek.cpp" />
     <ClCompile Include="SDL_SimpleApp.cpp" />
