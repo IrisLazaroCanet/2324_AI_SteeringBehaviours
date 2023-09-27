@@ -26,6 +26,9 @@ Vector2D WeightedBlendingBehavior::CalculateForces(Agent* agent, Vector2D target
         totalForce += behaviorForce * weight;
     }
 
+    //Mirar si es pot fer amb vectors
+    //Posar acceleracio a fora
+
     return totalForce;
 }
 

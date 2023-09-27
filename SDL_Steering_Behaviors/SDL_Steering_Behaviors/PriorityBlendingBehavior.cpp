@@ -19,12 +19,17 @@ Vector2D PriorityBlendingBehavior::CalculateForces(Agent* agent, Vector2D target
         // Calculate the force from the current behavior
         Vector2D behaviorForce = behavior->CalculateForces(agent, target, dtime);
 
-        // Apply the behavior's force to the total force
-        totalForce += behaviorForce;
+
+        //FERHO AIXI
+       /* if behaviorForce > THRESHOLD
+            return behaviorForce*/
     }
 
-    return totalForce;
+    return Vector2D(0,0);
 }
+
+
+//1 quan hi ha un amb força triar aquell i deixar els demes sense utilitzar
 
 //Amb aixo hauries de poder crear coses mes extenses, aixo nomes fa que acumuli forces sense considerar el ordre o la prioritat, shauria de cambiar la clase segons el que volguem fer
 
