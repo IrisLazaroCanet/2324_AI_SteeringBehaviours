@@ -8,6 +8,7 @@
 #include "utils.h"
 #include "SteeringBehavior.h"
 
+#include <vector>
 
 class Agent
 {
@@ -15,6 +16,10 @@ class Agent
 	friend class SeekBehavior;
 	friend class FleeBehavior;
 	friend class WeightedBlendingBehavior;
+///////////////////////////////////////////////////////////////////////////////Added
+	friend class PriorityBlendingBehavior;
+	friend class CohesionBehavior;
+
 
 private:
 	SteeringBehavior *steering_behavior;
@@ -36,6 +41,15 @@ private:
 	int sprite_w;
 	int sprite_h;
 
+///////////////////////////////////////////////////////////////////////////////Added
+		// Add a member variable for the cohesion radius
+	float cohesionRadius;
+
+	// Add a member variable to store a list of neighboring agents
+	std::vector<Agent*> neighbors;
+	float maxForce; // Add a member variable for maximum force
+
+
 public:
 	Agent();
 	Agent(SteeringBehavior* _steering_behavior);
@@ -54,4 +68,21 @@ public:
 	void draw();
 	bool Agent::loadSpriteTexture(char* filename, int num_frames=1);
 	
+
+	///////////////////////////////////////////////////////////////////////////////Added
+		// Add functions to get the cohesion radius and neighbors
+	float getCohesionRadius() const { return cohesionRadius; }
+
+	// Add a function to add neighboring agents
+	void addNeighbor(Agent* neighbor)
+	{
+		neighbors.push_back(neighbor);
+	}
+
+	// Implement a function to get the maximum force
+	float getMaxForce() const { return maxForce; }
+
+	// Implement the getNeighbors function
+	const std::vector<Agent*>& getNeighbors() const { return neighbors; }
+	// ...
 };
