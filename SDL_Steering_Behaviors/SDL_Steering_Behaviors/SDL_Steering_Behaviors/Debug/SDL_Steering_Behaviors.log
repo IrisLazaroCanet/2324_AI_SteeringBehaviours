@@ -9,6 +9,6 @@
   SteeringBehavior.cpp
   utils.cpp
   WeightedBlendingBehavior.cpp
-  Generating Code...
-  LINK : C:\Users\EmmaPolanco\Desktop\3CDI\IA\2324_AI_SteeringBehaviours\SDL_Steering_Behaviors\\bin\SDL_Steering_Behaviors.exe not found or not built by the last incremental link; performing full link
-  SDL_Steering_Behaviors.vcxproj -> C:\Users\EmmaPolanco\Desktop\3CDI\IA\2324_AI_SteeringBehaviours\SDL_Steering_Behaviors\bin\SDL_Steering_Behaviors.exe
+  Generando código...
+  LINK : no se encontró D:\GitRepos\IA_CDI3\2324_AI_SteeringBehaviours\SDL_Steering_Behaviors\\bin\SDL_Steering_Behaviors.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+  SDL_Steering_Behaviors.vcxproj -> D:\GitRepos\IA_CDI3\2324_AI_SteeringBehaviours\SDL_Steering_Behaviors\bin\SDL_Steering_Behaviors.exe

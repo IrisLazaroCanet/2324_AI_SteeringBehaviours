@@ -12,6 +12,8 @@ public:
 
 private:
     std::vector<SteeringBehavior*> behaviors;
+    float threshold; // Threshold value for behavior force
+
 };
 
 

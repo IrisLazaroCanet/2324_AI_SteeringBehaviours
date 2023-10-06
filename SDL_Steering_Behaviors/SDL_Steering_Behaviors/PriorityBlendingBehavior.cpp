@@ -1,7 +1,7 @@
 #include "PriorityBlendingBehavior.h"
 
 PriorityBlendingBehavior::PriorityBlendingBehavior(std::initializer_list<SteeringBehavior*> behaviors)
-    : behaviors(behaviors)
+    : behaviors(behaviors), threshold(2.0f) // Initialize the threshold to a value that we want
 {
 }
 
@@ -19,14 +19,21 @@ Vector2D PriorityBlendingBehavior::CalculateForces(Agent* agent, Vector2D target
         // Calculate the force from the current behavior
         Vector2D behaviorForce = behavior->CalculateForces(agent, target, dtime);
 
+        // Check if the behavior force magnitude exceeds the threshold
+        if (behaviorForce.LengthSquared() >= threshold * threshold)
+        {
+            // If it does, return the behavior's force immediately
+            return behaviorForce;
+        }
 
-        //FERHO AIXI
-       /* if behaviorForce > THRESHOLD
-            return behaviorForce*/
+        // Otherwise, accumulate the behavior's force into the total force
+        totalForce += behaviorForce;
     }
 
-    return Vector2D(0,0);
+    // If no behavior force exceeds the threshold, return the accumulated force
+    return totalForce;
 }
+
 
 
 //1 quan hi ha un amb força triar aquell i deixar els demes sense utilitzar
