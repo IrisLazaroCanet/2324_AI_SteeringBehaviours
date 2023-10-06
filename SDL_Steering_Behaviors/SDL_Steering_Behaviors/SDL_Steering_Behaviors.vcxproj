@@ -134,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h" />
+    <ClInclude Include="CohesionBehavior.h" />
     <ClInclude Include="FleeBehavior.h" />
     <ClInclude Include="PriorityBlendingBehavior.h" />
     <ClInclude Include="Scene.h" />
@@ -148,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
+    <ClCompile Include="CohesionBehavior.cpp" />
     <ClCompile Include="FleeBehavior.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PriorityBlendingBehavior.cpp" />
