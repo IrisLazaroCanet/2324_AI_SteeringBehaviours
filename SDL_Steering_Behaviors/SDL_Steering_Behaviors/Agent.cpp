@@ -16,7 +16,8 @@ Agent::Agent() : sprite_texture(0),
 	             sprite_h(0),
 	             draw_sprite(false),
 	separationRadius(50.0f), // Set the separation radius as needed
-	cohesionRadius(50.0f)
+	cohesionRadius(50.0f),
+	alignmentRadius(100.0f)
 {
 	//steering_behavior = new SteeringBehavior; -> CANNOT INSTANTIATE ABSTRACT CLASS
 	

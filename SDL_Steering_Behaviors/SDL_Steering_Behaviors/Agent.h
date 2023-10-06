@@ -19,6 +19,8 @@ class Agent
 ///////////////////////////////////////////////////////////////////////////////Added
 	friend class PriorityBlendingBehavior;
 	friend class CohesionBehavior;
+	friend class SeparationBehavior;
+	friend class AllignmentBehavior;
 
 
 private:
@@ -45,6 +47,7 @@ private:
 		// Add a member variable for the cohesion radius, separation radius
 	float cohesionRadius;
 	float separationRadius;
+	float alignmentRadius;
 
 	// Add a member variable to store a list of neighboring agents
 	std::vector<Agent*> neighbors;
@@ -91,4 +94,6 @@ public:
 
 
 	float getSeparationRadius() const;
+
+	float getAlignmentRadius() const { return alignmentRadius; }
 };
