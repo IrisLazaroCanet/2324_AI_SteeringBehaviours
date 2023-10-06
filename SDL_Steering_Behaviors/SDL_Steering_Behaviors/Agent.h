@@ -42,12 +42,15 @@ private:
 	int sprite_h;
 
 ///////////////////////////////////////////////////////////////////////////////Added
-		// Add a member variable for the cohesion radius
+		// Add a member variable for the cohesion radius, separation radius
 	float cohesionRadius;
+	float separationRadius;
 
 	// Add a member variable to store a list of neighboring agents
 	std::vector<Agent*> neighbors;
 	float maxForce; // Add a member variable for maximum force
+
+
 
 
 public:
@@ -85,4 +88,7 @@ public:
 	// Implement the getNeighbors function
 	const std::vector<Agent*>& getNeighbors() const { return neighbors; }
 	// ...
+
+
+	float getSeparationRadius() const;
 };

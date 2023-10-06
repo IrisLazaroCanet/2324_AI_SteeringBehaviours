@@ -14,7 +14,9 @@ Agent::Agent() : sprite_texture(0),
 				 sprite_num_frames(0),
 	             sprite_w(0),
 	             sprite_h(0),
-	             draw_sprite(false)
+	             draw_sprite(false),
+	separationRadius(50.0f), // Set the separation radius as needed
+	cohesionRadius(50.0f)
 {
 	//steering_behavior = new SteeringBehavior; -> CANNOT INSTANTIATE ABSTRACT CLASS
 	
@@ -192,4 +194,9 @@ bool Agent::loadSpriteTexture(char* filename, int _num_frames)
 		SDL_FreeSurface(image);
 
 	return true;
+}
+
+float Agent::getSeparationRadius() const
+{
+	return separationRadius;
 }
