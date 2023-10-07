@@ -7,7 +7,7 @@ SceneFlocking::SceneFlocking(int agentAmount)
 	int x_max, x_min, y_max, y_min, xPosition, yPosition;
 	for (int i = 0; i < agentAmount; i++)
 	{
-		Agent* agent = new Agent(new FlockingBehavior(0.3f, 0.3f, 0.4f, 5.f));
+		Agent* agent = new Agent(new FlockingBehavior(0.8f, 0.4f, 0.4f, 5.f));
 
 		x_max = 1275;
 		x_min = 5;

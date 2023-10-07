@@ -2,10 +2,17 @@
 
 FlockingBehavior::FlockingBehavior(float _cohesionWeight, float _separationWeight, float _alignmentWeight, float _separationRadius)
 {
+	/*
 	weightedBlending = new WeightedBlendingBehavior({
 		{new CohesionBehavior(), _cohesionWeight},
 		{new SeparationBehavior(_separationRadius), _separationWeight},
 		{new AlignmentBehavior(), _alignmentWeight}
+		});
+		*/
+
+	weightedBlending = new WeightedBlendingBehavior({
+		{new FleeBehavior(), _cohesionWeight},
+		{new SeekBehavior(), _separationWeight},
 		});
 
 }

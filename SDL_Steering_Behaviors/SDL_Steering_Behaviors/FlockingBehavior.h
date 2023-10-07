@@ -6,6 +6,10 @@
 #include "SeparationBehavior.h"
 #include "AllignmentBehavior.h"
 
+//TODO: Remove this test includes
+#include "FleeBehavior.h"
+#include "SeekBehavior.h"
+
 class Agent;
 
 class FlockingBehavior : public SteeringBehavior

@@ -21,7 +21,6 @@ Vector2D WeightedBlendingBehavior::CalculateForces(Agent* agent, Vector2D target
 
         // Calculate the force from the behavior
         Vector2D behaviorForce = behavior->CalculateForces(agent, target, dtime);
-
         // Add the weighted force to the total force
         totalForce += behaviorForce * weight;
     }
