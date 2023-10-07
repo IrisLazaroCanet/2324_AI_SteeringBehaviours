@@ -3,7 +3,7 @@
 #include "Scene.h"
 #include "Agent.h"
 
-//Include behaviors
+#include "FlockingBehavior.h"
 
 class SceneFlocking : public Scene
 {
