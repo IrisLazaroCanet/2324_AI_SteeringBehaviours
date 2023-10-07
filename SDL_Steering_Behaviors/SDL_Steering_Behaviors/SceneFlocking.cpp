@@ -11,3 +11,20 @@ SceneFlocking::SceneFlocking(int agentAmount)
 
 	}
 }
+
+SceneFlocking::~SceneFlocking()
+{
+}
+
+void SceneFlocking::update(float dtime, SDL_Event* event)
+{
+}
+
+void SceneFlocking::draw()
+{
+}
+
+const char* SceneFlocking::getTitle()
+{
+	return nullptr;
+}

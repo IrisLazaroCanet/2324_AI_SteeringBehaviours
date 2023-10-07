@@ -1,24 +1,2 @@
-﻿  Agent.cpp
-  AllignmentBehavior.cpp
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA1\2324_AI_SteeringBehaviours\SDL_Steering_Behaviors\SDL_Steering_Behaviors\AllignmentBehavior.cpp(28,28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  CohesionBehavior.cpp
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA1\2324_AI_SteeringBehaviours\SDL_Steering_Behaviors\SDL_Steering_Behaviors\CohesionBehavior.cpp(29,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  FleeBehavior.cpp
-  FlockingBehavior.cpp
-  main.cpp
-  PriorityBlendingBehavior.cpp
-  SceneFlee.cpp
-  SceneFlocking.cpp
-  SceneSeek.cpp
-  SDL_SimpleApp.cpp
-  SeekBehavior.cpp
-  SeparationBehavior.cpp
-  SteeringBehavior.cpp
-  utils.cpp
-  WeightedBlendingBehavior.cpp
-  Generating Code...
-SceneFlocking.obj : error LNK2019: unresolved external symbol "public: virtual __thiscall SceneFlocking::~SceneFlocking(void)" (??1SceneFlocking@@UAE@XZ) referenced in function "public: virtual void * __thiscall SceneFlocking::`scalar deleting destructor'(unsigned int)" (??_GSceneFlocking@@UAEPAXI@Z)
-SceneFlocking.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall SceneFlocking::update(float,union SDL_Event *)" (?update@SceneFlocking@@UAEXMPATSDL_Event@@@Z)
-SceneFlocking.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall SceneFlocking::draw(void)" (?draw@SceneFlocking@@UAEXXZ)
-SceneFlocking.obj : error LNK2001: unresolved external symbol "public: virtual char const * __thiscall SceneFlocking::getTitle(void)" (?getTitle@SceneFlocking@@UAEPBDXZ)
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA1\2324_AI_SteeringBehaviours\SDL_Steering_Behaviors\\bin\SDL_Steering_Behaviors.exe : fatal error LNK1120: 4 unresolved externals
+﻿  SceneFlocking.cpp
+  SDL_Steering_Behaviors.vcxproj -> C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA1\2324_AI_SteeringBehaviours\SDL_Steering_Behaviors\bin\SDL_Steering_Behaviors.exe
