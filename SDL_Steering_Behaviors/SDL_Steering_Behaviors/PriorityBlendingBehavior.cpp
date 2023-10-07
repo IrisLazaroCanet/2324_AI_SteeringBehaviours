@@ -34,6 +34,11 @@ Vector2D PriorityBlendingBehavior::CalculateForces(Agent* agent, Vector2D target
     return totalForce;
 }
 
+Vector2D PriorityBlendingBehavior::CalculateForces(Agent* agent, Agent* target, float dtime)
+{
+    return CalculateForces(agent, target->position, dtime);
+}
+
 
 
 //1 quan hi ha un amb força triar aquell i deixar els demes sense utilitzar

@@ -1,6 +1,7 @@
 #pragma once
 #include "SteeringBehavior.h"
 
+#include "PriorityBlendingBehavior.h"
 #include "WeightedBlendingBehavior.h"
 #include "CohesionBehavior.h"
 #include "SeparationBehavior.h"
@@ -16,6 +17,7 @@ class FlockingBehavior : public SteeringBehavior
 {
 private:
 	WeightedBlendingBehavior* weightedBlending;
+	PriorityBlendingBehavior* priorityBlending;
 	float cohesionWeight;
 	float separationWeight;
 	float alignmentWeight;
