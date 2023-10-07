@@ -46,3 +46,8 @@ Vector2D SeparationBehavior::CalculateForces(Agent* agent, Vector2D target, floa
     return Vector2D(0, 0);
 }
 
+Vector2D SeparationBehavior::CalculateForces(Agent* agent, Agent* target, float dtime)
+{
+    return CalculateForces(agent, target->getPosition(), dtime);
+}
+

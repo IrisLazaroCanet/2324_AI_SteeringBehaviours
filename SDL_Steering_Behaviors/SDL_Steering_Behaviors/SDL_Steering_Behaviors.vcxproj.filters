@@ -65,6 +65,12 @@
     <ClInclude Include="AllignmentBehavior.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SceneFlocking.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlockingBehavior.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp">
@@ -107,6 +113,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AllignmentBehavior.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneFlocking.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlockingBehavior.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

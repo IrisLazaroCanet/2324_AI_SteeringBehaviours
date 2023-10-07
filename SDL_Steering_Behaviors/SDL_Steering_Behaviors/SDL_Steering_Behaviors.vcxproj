@@ -137,9 +137,11 @@
     <ClInclude Include="AllignmentBehavior.h" />
     <ClInclude Include="CohesionBehavior.h" />
     <ClInclude Include="FleeBehavior.h" />
+    <ClInclude Include="FlockingBehavior.h" />
     <ClInclude Include="PriorityBlendingBehavior.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneFlee.h" />
+    <ClInclude Include="SceneFlocking.h" />
     <ClInclude Include="SceneSeek.h" />
     <ClInclude Include="SDL_SimpleApp.h" />
     <ClInclude Include="SeekBehavior.h" />
@@ -154,9 +156,11 @@
     <ClCompile Include="AllignmentBehavior.cpp" />
     <ClCompile Include="CohesionBehavior.cpp" />
     <ClCompile Include="FleeBehavior.cpp" />
+    <ClCompile Include="FlockingBehavior.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PriorityBlendingBehavior.cpp" />
     <ClCompile Include="SceneFlee.cpp" />
+    <ClCompile Include="SceneFlocking.cpp" />
     <ClCompile Include="SceneSeek.cpp" />
     <ClCompile Include="SDL_SimpleApp.cpp" />
     <ClCompile Include="SeekBehavior.cpp" />
