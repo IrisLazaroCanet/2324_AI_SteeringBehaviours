@@ -21,13 +21,17 @@ Vector2D SeparationBehavior::CalculateForces(Agent* agent, Vector2D target, floa
         {
             // Calculate the separation vector from the neighbor
             Vector2D separation = agent->getPosition() - neighbor->getPosition();
-            separation.Normalize();
+            //separation.Normalize();
 
             // Weight the separation vector by the inverse of the distance
+
             separation /= distance;
+            separation *= 10000.0f;
 
             separationForce += separation;
+            
             neighborCount++;
+
         }
     }
 
@@ -37,10 +41,18 @@ Vector2D SeparationBehavior::CalculateForces(Agent* agent, Vector2D target, floa
         separationForce /= static_cast<float>(neighborCount);
 
         // Normalize and scale the separation force by the maximum force
-        separationForce.Normalize();
-        separationForce *= agent->getMaxForce();
+        //separationForce.Normalize();
+       // separationForce = (5, 5);
 
+        //std::cout << separationForce.x << separationForce.y << std::endl;
+        //separationForce *= agent->getMaxForce();
+        //separationForce.x *= 1.f;
+       // separationForce.y *= 1.f;
+
+       // std::cout << separationForce.x << separationForce.y << std::endl;
+       // std::cout << separationForce.x << separationForce.y << std::endl;
         return separationForce;
+
     }
 
     return Vector2D(0, 0);

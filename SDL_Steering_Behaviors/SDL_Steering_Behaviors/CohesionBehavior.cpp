@@ -29,7 +29,8 @@ Vector2D CohesionBehavior::CalculateForces(Agent* agent, Vector2D target, float 
         centerOfMass /= agentCount;
 
         // Calculate the steering force towards the center of mass
-        Vector2D cohesionForce = (centerOfMass - agent->getPosition()).Normalize() * agent->getMaxForce();
+        Vector2D cohesionForce = (centerOfMass - agent->getPosition()).Normalize() * 1000;
+        //std::cout << cohesionForce.x << cohesionForce.y << std::endl;
         return cohesionForce;
     }
 

@@ -28,7 +28,8 @@ Vector2D AlignmentBehavior::CalculateForces(Agent* agent, Vector2D target, float
         averageVelocity /= agentCount;
 
         // Calculate the steering force towards the average velocity
-        Vector2D alignmentForce = (averageVelocity - agent->getVelocity()).Normalize() * agent->getMaxForce();
+        Vector2D alignmentForce = (averageVelocity - agent->getVelocity()).Normalize() * 2000;
+        std::cout << alignmentForce.x << alignmentForce.y << std::endl;
         return alignmentForce;
     }
 

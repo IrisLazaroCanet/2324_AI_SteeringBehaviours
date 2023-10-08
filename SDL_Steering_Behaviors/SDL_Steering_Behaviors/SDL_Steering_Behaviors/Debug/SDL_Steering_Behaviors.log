@@ -1,2 +1,3 @@
-﻿  SceneFlocking.cpp
-  SDL_Steering_Behaviors.vcxproj -> C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA1\2324_AI_SteeringBehaviours\SDL_Steering_Behaviors\bin\SDL_Steering_Behaviors.exe
+﻿  AllignmentBehavior.cpp
+C:\Users\Arnau\Desktop\IA\2324_AI_SteeringBehaviours\SDL_Steering_Behaviors\SDL_Steering_Behaviors\AllignmentBehavior.cpp(28,28): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  SDL_Steering_Behaviors.vcxproj -> C:\Users\Arnau\Desktop\IA\2324_AI_SteeringBehaviours\SDL_Steering_Behaviors\bin\SDL_Steering_Behaviors.exe
