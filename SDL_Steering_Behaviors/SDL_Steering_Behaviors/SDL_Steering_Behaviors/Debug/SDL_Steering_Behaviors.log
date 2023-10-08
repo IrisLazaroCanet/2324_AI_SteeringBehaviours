@@ -1,7 +1,2 @@
-﻿  FlockingBehavior.cpp
-  PriorityBlendingBehavior.cpp
-  SceneFlocking.cpp
-  main.cpp
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA1\2324_AI_SteeringBehaviours\SDL_Steering_Behaviors\SDL_Steering_Behaviors\main.cpp(16,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Generating Code...
+﻿  SceneFlocking.cpp
   SDL_Steering_Behaviors.vcxproj -> C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA1\2324_AI_SteeringBehaviours\SDL_Steering_Behaviors\bin\SDL_Steering_Behaviors.exe

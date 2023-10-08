@@ -201,3 +201,10 @@ float Agent::getSeparationRadius() const
 {
 	return separationRadius;
 }
+
+void Agent::setRadius(float _cohesionRadius, float _separationRadius, float _alignmentRadius)
+{
+	cohesionRadius = _cohesionRadius;
+	separationRadius = _separationRadius;
+	alignmentRadius = _alignmentRadius;
+}

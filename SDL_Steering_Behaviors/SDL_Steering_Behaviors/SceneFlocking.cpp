@@ -19,10 +19,19 @@ SceneFlocking::SceneFlocking(int agentAmount)
 		agent->setPosition(Vector2D((float)xPosition, (float)yPosition));
 		agent->setTarget(Vector2D((float)xPosition, (float)yPosition));
 		//agent->loadSpriteTexture("../res/soldier.png", 4);
+		agent->setRadius(600.f, 600.f, 600.f);
 		agents.push_back(agent);
 
 		//Agents will go to the middle of the screen by default
 		target = Vector2D(640, 360);
+	}
+
+	for (int i = 0; i < agentAmount; i++)
+	{
+		for (int j = 0; j < (int)agents.size(); j++)
+		{
+			agents[i]->addNeighbor(agents[j]);
+		}
 	}
 }
 

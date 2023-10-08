@@ -97,4 +97,6 @@ public:
 	float getSeparationRadius() const;
 
 	float getAlignmentRadius() const { return alignmentRadius; }
+
+	void setRadius(float _cohesionRadius, float _separationRadius, float _alignmentRadius);
 };
