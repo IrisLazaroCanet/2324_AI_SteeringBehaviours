@@ -22,6 +22,7 @@ class Agent
 	friend class SeparationBehavior;
 	friend class AllignmentBehavior;
 	friend class FlockingBehavior;
+	friend class CollisionAvoidanceBehavior;
 
 
 private:

@@ -136,6 +136,7 @@
     <ClInclude Include="Agent.h" />
     <ClInclude Include="AllignmentBehavior.h" />
     <ClInclude Include="CohesionBehavior.h" />
+    <ClInclude Include="CollisionAvoidanceBehavior.h" />
     <ClInclude Include="FleeBehavior.h" />
     <ClInclude Include="FlockingBehavior.h" />
     <ClInclude Include="PriorityBlendingBehavior.h" />
@@ -155,6 +156,7 @@
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="AllignmentBehavior.cpp" />
     <ClCompile Include="CohesionBehavior.cpp" />
+    <ClCompile Include="CollisionAvoidanceBehavior.cpp" />
     <ClCompile Include="FleeBehavior.cpp" />
     <ClCompile Include="FlockingBehavior.cpp" />
     <ClCompile Include="main.cpp" />

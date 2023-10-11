@@ -71,6 +71,9 @@
     <ClInclude Include="FlockingBehavior.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CollisionAvoidanceBehavior.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp">
@@ -119,6 +122,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FlockingBehavior.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionAvoidanceBehavior.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
