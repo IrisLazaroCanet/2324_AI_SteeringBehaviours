@@ -7,8 +7,10 @@ SceneFlockingCollisionAvoidance::SceneFlockingCollisionAvoidance(int agentAmount
 	int x_max, x_min, y_max, y_min, xPosition, yPosition;
 	for (int i = 0; i < agentAmount; i++)
 	{
-		//TODO: Change this line
-		Agent* agent = new Agent(new FlockingBehavior(0.8f, 0.4f, 0.4f, 5.f));
+		Agent* agent = new Agent(new PriorityBlendingBehavior({
+			new CollisionAvoidanceBehavior(),
+			new FlockingBehavior(0.8f, 0.4f, 0.4f, 5.f)
+			}));
 
 		x_max = 1275;
 		x_min = 5;
