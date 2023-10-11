@@ -143,6 +143,7 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneFlee.h" />
     <ClInclude Include="SceneFlocking.h" />
+    <ClInclude Include="SceneFlockingCollisionAvoidance.h" />
     <ClInclude Include="SceneSeek.h" />
     <ClInclude Include="SDL_SimpleApp.h" />
     <ClInclude Include="SeekBehavior.h" />
@@ -163,6 +164,7 @@
     <ClCompile Include="PriorityBlendingBehavior.cpp" />
     <ClCompile Include="SceneFlee.cpp" />
     <ClCompile Include="SceneFlocking.cpp" />
+    <ClCompile Include="SceneFlockingCollisionAvoidance.cpp" />
     <ClCompile Include="SceneSeek.cpp" />
     <ClCompile Include="SDL_SimpleApp.cpp" />
     <ClCompile Include="SeekBehavior.cpp" />
