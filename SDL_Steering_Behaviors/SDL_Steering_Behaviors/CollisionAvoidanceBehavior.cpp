@@ -5,8 +5,13 @@ CollisionAvoidanceBehavior::CollisionAvoidanceBehavior()
 {
 }
 
+CollisionAvoidanceBehavior::CollisionAvoidanceBehavior(const std::vector<Obstacle>& obstacles)
+{
+}
+
 CollisionAvoidanceBehavior::~CollisionAvoidanceBehavior()
 {
+    this->obstacles = obstacles;
 }
 
 void CollisionAvoidanceBehavior::setObstacles(const std::vector<Obstacle>& obstacles)

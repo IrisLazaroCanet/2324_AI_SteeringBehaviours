@@ -15,7 +15,7 @@ SceneFlockingCollisionAvoidance::SceneFlockingCollisionAvoidance(int agentAmount
 	for (int i = 0; i < agentAmount; i++)
 	{
 		Agent* agent = new Agent(new PriorityBlendingBehavior({
-			new CollisionAvoidanceBehavior(),
+			new CollisionAvoidanceBehavior(obstacles),
 			new FlockingBehavior(0.8f, 0.4f, 0.4f, 5.f)
 			}));
 

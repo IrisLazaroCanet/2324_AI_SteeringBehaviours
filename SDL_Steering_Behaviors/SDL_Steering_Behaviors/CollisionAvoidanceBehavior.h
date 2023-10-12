@@ -8,8 +8,6 @@ class Agent;
 class CollisionAvoidanceBehavior : public SteeringBehavior
 {
 public:
-	CollisionAvoidanceBehavior();
-	~CollisionAvoidanceBehavior();
 
 	// Define a struct to represent obstacles
 	struct Obstacle
@@ -18,6 +16,10 @@ public:
 
 		Obstacle(Vector2D pos) : position(pos) {}
 	};
+
+	CollisionAvoidanceBehavior();
+	CollisionAvoidanceBehavior(const std::vector<Obstacle>& obstacles);
+	~CollisionAvoidanceBehavior();
 
 	void setObstacles(const std::vector<Obstacle>& obstacles);
 
