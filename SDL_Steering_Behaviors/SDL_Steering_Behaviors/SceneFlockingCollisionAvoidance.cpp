@@ -66,6 +66,8 @@ void SceneFlockingCollisionAvoidance::update(float dtime, SDL_Event* event)
 
 	for (int i = 0; i < (int)agents.size(); i++)
 		agents[i]->update(dtime, event);
+
+
 }
 
 void SceneFlockingCollisionAvoidance::draw()

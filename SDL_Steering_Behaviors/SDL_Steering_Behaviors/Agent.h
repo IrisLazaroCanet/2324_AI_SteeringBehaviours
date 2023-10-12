@@ -100,4 +100,10 @@ public:
 	float getAlignmentRadius() const { return alignmentRadius; }
 
 	void setRadius(float _cohesionRadius, float _separationRadius, float _alignmentRadius);
+
+	float getOrientation() const
+	{
+		// Calculate orientation from the velocity vector
+		return (float)(atan2(velocity.y, velocity.x) * RAD2DEG);
+	}
 };
