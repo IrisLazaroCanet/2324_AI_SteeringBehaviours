@@ -1,3 +1,4 @@
+////SceneFlockingCollisionAvoidance.h
 #pragma once
 #include <vector>
 #include "Scene.h"
@@ -21,4 +22,6 @@ public:
 private:
 	std::vector<Agent*> agents;
 	Vector2D target;
+	std::vector<CollisionAvoidanceBehavior::Obstacle> obstacles;
+
 };

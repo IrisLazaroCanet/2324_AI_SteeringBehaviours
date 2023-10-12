@@ -106,4 +106,6 @@ public:
 		// Calculate orientation from the velocity vector
 		return (float)(atan2(velocity.y, velocity.x) * RAD2DEG);
 	}
+
+
 };

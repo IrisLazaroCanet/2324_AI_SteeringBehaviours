@@ -1,9 +1,16 @@
+//SceneFlockingCollisionAvoidance.cpp
 #include "SceneFlockingCollisionAvoidance.h"
-
 using namespace std;
 
 SceneFlockingCollisionAvoidance::SceneFlockingCollisionAvoidance(int agentAmount)
 {
+
+	// Crea y agrega obstáculos a la lista de obstáculos
+	obstacles.push_back(CollisionAvoidanceBehavior::Obstacle(Vector2D(200, 200)));
+	obstacles.push_back(CollisionAvoidanceBehavior::Obstacle(Vector2D(500, 300)));
+	obstacles.push_back(CollisionAvoidanceBehavior::Obstacle(Vector2D(800, 400)));
+
+
 	int x_max, x_min, y_max, y_min, xPosition, yPosition;
 	for (int i = 0; i < agentAmount; i++)
 	{
@@ -27,6 +34,14 @@ SceneFlockingCollisionAvoidance::SceneFlockingCollisionAvoidance(int agentAmount
 
 		//Agents will go to the middle of the screen by default
 		target = Vector2D(640, 360);
+
+		//for (Agent* agent : agents)
+		//{
+		//	if (CollisionAvoidanceBehavior* avoidanceBehavior = dynamic_cast<CollisionAvoidanceBehavior*>(agent->getBehavior()))
+		//	{
+		//		avoidanceBehavior->setObstacles(obstacles);
+		//	}
+		//}
 	}
 
 	for (int i = 0; i < agentAmount; i++)
@@ -68,11 +83,16 @@ void SceneFlockingCollisionAvoidance::update(float dtime, SDL_Event* event)
 		agents[i]->update(dtime, event);
 
 
+
+	//std::cout << obstacles[0].position.x << " " << obstacles[0].position.y << std::endl;
+
 }
 
 void SceneFlockingCollisionAvoidance::draw()
 {
 	draw_circle(TheApp::Instance()->getRenderer(), (int)target.x, (int)target.y, 15, 255, 0, 0, 255);
+
+	draw_circle(TheApp::Instance()->getRenderer(), (int)(obstacles[0].position.x), (int)(obstacles[0].position.y), 30, 255, 0, 0, 255);
 
 	for (int i = 0; i < (int)agents.size(); i++)
 		agents[i]->draw();

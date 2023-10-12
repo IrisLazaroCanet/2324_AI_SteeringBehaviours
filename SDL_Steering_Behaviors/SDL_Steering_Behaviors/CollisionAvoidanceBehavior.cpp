@@ -1,3 +1,4 @@
+//CollisionAvoidanceBehaviour.cpp
 #include "CollisionAvoidanceBehavior.h"
 
 CollisionAvoidanceBehavior::CollisionAvoidanceBehavior()
@@ -6,6 +7,11 @@ CollisionAvoidanceBehavior::CollisionAvoidanceBehavior()
 
 CollisionAvoidanceBehavior::~CollisionAvoidanceBehavior()
 {
+}
+
+void CollisionAvoidanceBehavior::setObstacles(const std::vector<Obstacle>& obstacles)
+{
+    this->obstacles = obstacles;
 }
 
 Vector2D CollisionAvoidanceBehavior::CalculateForces(Agent* agent, Vector2D target, float dtime)
@@ -35,6 +41,7 @@ Vector2D CollisionAvoidanceBehavior::CalculateForces(Agent* agent, Vector2D targ
             // Calculate the distance from the agent to the obstacle
             float distanceToObstacle = Vector2D::Distance(agentPosition, obstaclePosition);
 
+            std::cout << "OBSTACLE IN VISION" << std::endl;
             // Update the nearest obstacle if this one is closer
             if (distanceToObstacle < shortestDistance)
             {

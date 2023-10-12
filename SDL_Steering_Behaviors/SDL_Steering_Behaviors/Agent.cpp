@@ -208,3 +208,5 @@ void Agent::setRadius(float _cohesionRadius, float _separationRadius, float _ali
 	separationRadius = _separationRadius;
 	alignmentRadius = _alignmentRadius;
 }
+
+
