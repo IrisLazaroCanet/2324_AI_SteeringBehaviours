@@ -16,7 +16,6 @@ public:
 	virtual Vector2D CalculateForces(Agent* agent, Agent* target, float dtime) override;
 	
 private:
-	//Un map ens permet tenir associat a cada behavior el seu weight
-	//Millor que tenir dos vectors per separat
+	//A map allows us to associate each behavior with its weight. It's better than having two separate vectors.
 	map<SteeringBehavior*, float> behaviors;
 };

@@ -18,7 +18,6 @@ SceneFlocking::SceneFlocking(int agentAmount)
 		
 		agent->setPosition(Vector2D((float)xPosition, (float)yPosition));
 		agent->setTarget(Vector2D((float)xPosition, (float)yPosition));
-		//agent->loadSpriteTexture("../res/soldier.png", 4);
 		agent->setRadius(200.f, 100.f, 150.f);
 		agents.push_back(agent);
 

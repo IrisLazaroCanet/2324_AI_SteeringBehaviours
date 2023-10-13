@@ -3,34 +3,38 @@
 
 CohesionBehavior::CohesionBehavior()
 {
-    // Additional initialization code if needed
+
 }
 
 Vector2D CohesionBehavior::CalculateForces(Agent* agent, Vector2D target, float dtime)
 {
+    //1 Initialize variables to calculate the center of mass and agent count
+
     Vector2D centerOfMass;
     int agentCount = 0;
 
+    //2 Iterate through the agent's neighbors
     for (Agent* neighbor : agent->getNeighbors())
     {
-        // Calculate distance to neighbor
+        //3 Calculate distance to neighbor
         float distance = Vector2D::Distance(agent->getPosition(), neighbor->getPosition());
 
-        // Check if the neighbor is within the cohesion radius
+        //4 Check if the neighbor is within the cohesion radius
         if (distance > 0 && distance < agent->getCohesionRadius())
         {
+            //5 Accumulate the neighbor's position to calculate the center of mass
             centerOfMass += neighbor->getPosition();
             agentCount++;
         }
     }
-
+    //6 If there are suitable neighbors for cohesion
     if (agentCount > 0)
     {
+        //7 Calculate the center of mass by dividing the sum by the count
         centerOfMass /= agentCount;
 
-        // Calculate the steering force towards the center of mass
+        //8 Calculate the steering force towards the center of mass
         Vector2D cohesionForce = (centerOfMass - agent->getPosition()).Normalize() * 1000;
-        //std::cout << cohesionForce.x << cohesionForce.y << std::endl;
         return cohesionForce;
     }
 

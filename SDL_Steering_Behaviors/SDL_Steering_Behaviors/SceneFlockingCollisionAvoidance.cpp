@@ -5,7 +5,7 @@ using namespace std;
 SceneFlockingCollisionAvoidance::SceneFlockingCollisionAvoidance(int agentAmount)
 {
 
-	// Crea y agrega obstáculos a la lista de obstáculos
+	// Create and add obstacles to the list of obstacles
 	obstacles.push_back(CollisionAvoidanceBehavior::Obstacle(Vector2D(200, 200)));
 	obstacles.push_back(CollisionAvoidanceBehavior::Obstacle(Vector2D(500, 300)));
 	obstacles.push_back(CollisionAvoidanceBehavior::Obstacle(Vector2D(800, 400)));
@@ -20,7 +20,6 @@ SceneFlockingCollisionAvoidance::SceneFlockingCollisionAvoidance(int agentAmount
 		Agent* agent = new Agent(new PriorityBlendingBehavior({
 			new CollisionAvoidanceBehavior(obstacles, tweakableValues.coneHalfAngle, tweakableValues.coneDistance),
 			new FlockingBehavior(0.8f, 0.4f, 0.4f, 5.f)
-			//new SeekBehavior()
 			}));
 
 		x_max = 1275;
@@ -32,20 +31,11 @@ SceneFlockingCollisionAvoidance::SceneFlockingCollisionAvoidance(int agentAmount
 
 		agent->setPosition(Vector2D((float)xPosition, (float)yPosition));
 		agent->setTarget(Vector2D((float)xPosition, (float)yPosition));
-		//agent->loadSpriteTexture("../res/soldier.png", 4);
 		agent->setRadius(200.f, 100.f, 150.f);
 		agents.push_back(agent);
 
 		//Agents will go to the middle of the screen by default
 		target = Vector2D(640, 360);
-
-		//for (Agent* agent : agents)
-		//{
-		//	if (CollisionAvoidanceBehavior* avoidanceBehavior = dynamic_cast<CollisionAvoidanceBehavior*>(agent->getBehavior()))
-		//	{
-		//		avoidanceBehavior->setObstacles(obstacles);
-		//	}
-		//}
 	}
 
 	for (int i = 0; i < agentAmount; i++)
@@ -114,9 +104,6 @@ void SceneFlockingCollisionAvoidance::update(float dtime, SDL_Event* event)
 
 	for (int i = 0; i < (int)agents.size(); i++)
 		UpdateAgentValues(i);
-
-	//std::cout << obstacles[0].position.x << " " << obstacles[0].position.y << std::endl;
-
 }
 
 void SceneFlockingCollisionAvoidance::draw()

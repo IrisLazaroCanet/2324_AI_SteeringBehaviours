@@ -19,26 +19,6 @@ Agent::Agent() : sprite_texture(0),
 	cohesionRadius(50.0f),
 	alignmentRadius(100.0f)
 {
-	//steering_behavior = new SteeringBehavior; -> CANNOT INSTANTIATE ABSTRACT CLASS
-	
-	
-	
-	//steering_behaviour = new SeekBehavior;		//EXERCICI 1
-	//steering_behaviour = new FleeBehavior;
-	//...
-	//sb1 = new SteeringBehaviorCohesion;			//EXERCICI 2
-	//sb2 = new SteeringBehaviorSeparation;
-	//sb3 = new SteeringBehaviorAlignment;
-	//flocking = new SteeringBehaviorWeightedBlending([sb1, sb2, sb3], [0.5, 0.25, 0.15]);
-		//La idea seria tenir una classe a què passar-li una llista de steering behaviors i els seus weights
-		//(els weights no tenen per què sumar 1, no fa falta)
-		//També es podria fer:
-		//steering_behavior = new SteeringBehaviorWeightedBlending([flocking, seek], [0.5, 0.5]);
-	//steering_behavior = new SteeringBehaviorPriorityList([obstacle_avoidance, flocking, wander]);
-
-	//FER UNA ÚNICA ESCENA 
-	//IMPORTANT BORRAR CARPETA .vs EN ENTREGAR LA PRÀCTICA!!
-
 
 }
 
@@ -119,11 +99,7 @@ void Agent::setColor(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
 
 void Agent::update(float dtime, SDL_Event *event)
 {
-
-	//cout << "agent update:" << endl;
-
 	switch (event->type) {
-		/* Keyboard & Mouse events */
 	case SDL_KEYDOWN:
 		if (event->key.keysym.scancode == SDL_SCANCODE_SPACE)
 			draw_sprite = !draw_sprite;
@@ -140,10 +116,8 @@ void Agent::update(float dtime, SDL_Event *event)
 
 	position = position + velocity * dtime;
 
-
 	// Update orientation
 	orientation = (float)(atan2(velocity.y, velocity.x) * RAD2DEG);
-
 
 	// Trim position values to window size
 	if (position.x < 0) position.x = TheApp::Instance()->getWinSize().x;

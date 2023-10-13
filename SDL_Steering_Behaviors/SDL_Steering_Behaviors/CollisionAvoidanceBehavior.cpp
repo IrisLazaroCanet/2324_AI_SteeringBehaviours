@@ -10,7 +10,6 @@ CollisionAvoidanceBehavior::CollisionAvoidanceBehavior(const std::vector<Obstacl
     this->obstacles = obstacles;
     this->coneHalfAngle = coneHalfAngle;
     this->coneDistance = coneDistance;
-
 }
 
 CollisionAvoidanceBehavior::~CollisionAvoidanceBehavior()
@@ -34,7 +33,7 @@ Vector2D CollisionAvoidanceBehavior::CalculateForces(Agent* agent, Vector2D targ
     std::vector<Obstacle>& obstacles = this->obstacles;
 
     //FET AL CONSTRUCTOR DEL BEHAVIOR
-    // Set the cone vision parameters (you may adjust these)
+    // Set the cone vision parameters (This values can be adjusted, ajustar-ho a lo que us agradi)
     //float coneHalfAngle = 180.0f;  // Half of the cone angle
     //float coneDistance = 200.0f; // Maximum distance to check for obstacles
 
@@ -51,7 +50,6 @@ Vector2D CollisionAvoidanceBehavior::CalculateForces(Agent* agent, Vector2D targ
         Vector2D obstaclePosition = obstacle.position;
 
         // Check if the obstacle is inside the agent's cone of vision
-        //if (Vector2DUtils::IsInsideCone(obstaclePosition, agentPosition, target, coneHalfAngle))
         if (Vector2DUtils::IsInsideCone(obstaclePosition, agentPosition, agentPosition + coneDistance, coneHalfAngle))
         {
             // Calculate the distance from the agent to the obstacle
@@ -60,7 +58,7 @@ Vector2D CollisionAvoidanceBehavior::CalculateForces(Agent* agent, Vector2D targ
             // Update the nearest obstacle if this one is closer
             if (distanceToObstacle < shortestDistance)
             {
-                nearestObstacle = const_cast<Obstacle*>(&obstacle);  // Corrected line
+                nearestObstacle = const_cast<Obstacle*>(&obstacle);
                 shortestDistance = distanceToObstacle;
             }
         }

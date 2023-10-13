@@ -3,58 +3,40 @@
 
 SeparationBehavior::SeparationBehavior(float separationRadius)
 {
-    // Additional initialization code if needed
 }
 
 Vector2D SeparationBehavior::CalculateForces(Agent* agent, Vector2D target, float dtime)
 {
+    //1 Initialize variables to calculate the separation force and neighbor count
     Vector2D separationForce;
     int neighborCount = 0;
-
+    //2 Iterate through the agent's neighbors
     for (Agent* neighbor : agent->getNeighbors())
     {
-        // Calculate the distance to the neighbor
+        //3 Calculate the distance to the neighbor
         float distance = Vector2D::Distance(agent->getPosition(), neighbor->getPosition());
 
-        // Check if the neighbor is within the separation radius (avoid division by zero)
+        //4 Check if the neighbor is within the separation radius (avoid division by zero)
         if (distance > 0 && distance < agent->getSeparationRadius())
         {
-            // Calculate the separation vector from the neighbor
+            //5 Calculate the separation vector from the neighbor
             Vector2D separation = agent->getPosition() - neighbor->getPosition();
-            //separation.Normalize();
-
-            // Weight the separation vector by the inverse of the distance
-
+            //6 Weight the separation vector by the inverse of the distance
             separation /= distance;
             separation *= 10000.0f;
-
+            //7 Accumulate the separation force
             separationForce += separation;
-            
             neighborCount++;
-
         }
     }
-
+    //8 If there are suitable neighbors for separation
     if (neighborCount > 0)
     {
-        // Average the separation force based on the number of neighbors
+        //9 Average the separation force based on the number of neighbors
         separationForce /= static_cast<float>(neighborCount);
-
-        // Normalize and scale the separation force by the maximum force
-        //separationForce.Normalize();
-       // separationForce = (5, 5);
-
-        //std::cout << separationForce.x << separationForce.y << std::endl;
-        //separationForce *= agent->getMaxForce();
-        //separationForce.x *= 1.f;
-       // separationForce.y *= 1.f;
-
-       // std::cout << separationForce.x << separationForce.y << std::endl;
-       // std::cout << separationForce.x << separationForce.y << std::endl;
         return separationForce;
-
     }
-
+    //10 If no suitable neighbors are found, return zero steering force
     return Vector2D(0, 0);
 }
 
