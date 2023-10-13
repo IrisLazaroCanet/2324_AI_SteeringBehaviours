@@ -1,23 +1,2 @@
-﻿  Agent.cpp
-  AllignmentBehavior.cpp
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA1\2324_AI_SteeringBehaviours\SDL_Steering_Behaviors\SDL_Steering_Behaviors\AllignmentBehavior.cpp(28,28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  CohesionBehavior.cpp
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA1\2324_AI_SteeringBehaviours\SDL_Steering_Behaviors\SDL_Steering_Behaviors\CohesionBehavior.cpp(29,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  CollisionAvoidanceBehavior.cpp
-  FleeBehavior.cpp
-  FlockingBehavior.cpp
-  main.cpp
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA1\2324_AI_SteeringBehaviours\SDL_Steering_Behaviors\SDL_Steering_Behaviors\main.cpp(17,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  PriorityBlendingBehavior.cpp
-  SceneFlee.cpp
-  SceneFlocking.cpp
-  SceneFlockingCollisionAvoidance.cpp
-  SceneSeek.cpp
-  SDL_SimpleApp.cpp
-  SeekBehavior.cpp
-  SeparationBehavior.cpp
-  SteeringBehavior.cpp
-  utils.cpp
-  WeightedBlendingBehavior.cpp
-  Generating Code...
+﻿  CollisionAvoidanceBehavior.cpp
   SDL_Steering_Behaviors.vcxproj -> C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA1\2324_AI_SteeringBehaviours\SDL_Steering_Behaviors\bin\SDL_Steering_Behaviors.exe

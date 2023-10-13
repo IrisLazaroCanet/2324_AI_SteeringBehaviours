@@ -16,7 +16,8 @@ SceneFlockingCollisionAvoidance::SceneFlockingCollisionAvoidance(int agentAmount
 	{
 		Agent* agent = new Agent(new PriorityBlendingBehavior({
 			new CollisionAvoidanceBehavior(obstacles),
-			new FlockingBehavior(0.8f, 0.4f, 0.4f, 5.f)
+			/*new FlockingBehavior(0.8f, 0.4f, 0.4f, 5.f)*/
+			new SeekBehavior()
 			}));
 
 		x_max = 1275;

@@ -7,11 +7,11 @@ CollisionAvoidanceBehavior::CollisionAvoidanceBehavior()
 
 CollisionAvoidanceBehavior::CollisionAvoidanceBehavior(const std::vector<Obstacle>& obstacles)
 {
+    this->obstacles = obstacles;
 }
 
 CollisionAvoidanceBehavior::~CollisionAvoidanceBehavior()
 {
-    this->obstacles = obstacles;
 }
 
 void CollisionAvoidanceBehavior::setObstacles(const std::vector<Obstacle>& obstacles)
