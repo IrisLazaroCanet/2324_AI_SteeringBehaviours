@@ -137,6 +137,7 @@
     <ClInclude Include="AllignmentBehavior.h" />
     <ClInclude Include="CohesionBehavior.h" />
     <ClInclude Include="CollisionAvoidanceBehavior.h" />
+    <ClInclude Include="Constants.h" />
     <ClInclude Include="FleeBehavior.h" />
     <ClInclude Include="FlockingBehavior.h" />
     <ClInclude Include="PriorityBlendingBehavior.h" />

@@ -14,7 +14,6 @@ SceneFlockingCollisionAvoidance::SceneFlockingCollisionAvoidance(int agentAmount
 	tweakableValues.coneHalfAngle = 180.f;
 	tweakableValues.coneDistance = 200.f;
 
-
 	int x_max, x_min, y_max, y_min, xPosition, yPosition;
 	for (int i = 0; i < agentAmount; i++)
 	{
@@ -82,10 +81,26 @@ void SceneFlockingCollisionAvoidance::update(float dtime, SDL_Event* event)
 		break;
 	case SDL_KEYDOWN:
 	{
-		if(event->key.keysym.scancode == SDL_SCANCODE_Z)
-			UpdateConeHalfAngle(10.f);
-		if (event->key.keysym.scancode == SDL_SCANCODE_X)
-			UpdateConeHalfAngle(-10.f);
+		if (event->key.keysym.scancode == SDL_SCANCODE_Z && tweakableValues.coneHalfAngle < MAX_ANGLE)
+		{
+			UpdateValue(tweakableValues.coneHalfAngle, ANGLE_INCREMENT);
+			std::cout << "Collision avoidance cone angle = " << tweakableValues.coneHalfAngle << std::endl;
+		}
+		if (event->key.keysym.scancode == SDL_SCANCODE_X && tweakableValues.coneHalfAngle > MIN_ANGLE)
+		{
+			UpdateValue(tweakableValues.coneHalfAngle, -ANGLE_INCREMENT);
+			std::cout << "Collision avoidance cone angle = " << tweakableValues.coneHalfAngle << std::endl;
+		}
+		if (event->key.keysym.scancode == SDL_SCANCODE_C && tweakableValues.coneDistance < MAX_DISTANCE)
+		{
+			UpdateValue(tweakableValues.coneDistance, DISTANCE_INCREMENT);
+			std::cout << "Collision avoidance cone distance = " << tweakableValues.coneDistance << std::endl;
+		}
+		if (event->key.keysym.scancode == SDL_SCANCODE_V && tweakableValues.coneDistance > MIN_DISTANCE)
+		{
+			UpdateValue(tweakableValues.coneDistance, -DISTANCE_INCREMENT);
+			std::cout << "Collision avoidance cone distance = " << tweakableValues.coneDistance << std::endl;
+		}
 		break;
 	}
 	default:
@@ -121,9 +136,9 @@ const char* SceneFlockingCollisionAvoidance::getTitle()
 	return "SDL Steering Behaviors :: Flocking with Collision avoidance Demo";
 }
 
-void SceneFlockingCollisionAvoidance::UpdateConeHalfAngle(float increment)
+void SceneFlockingCollisionAvoidance::UpdateValue(float& value, float increment)
 {
-	tweakableValues.coneHalfAngle += increment;
+	value += increment;
 }
 
 void SceneFlockingCollisionAvoidance::UpdateAgentValues(int index)
@@ -134,5 +149,4 @@ void SceneFlockingCollisionAvoidance::UpdateAgentValues(int index)
 			tweakableValues.coneHalfAngle,
 			tweakableValues.coneDistance
 		);
-	std::cout << tweakableValues.coneHalfAngle << std::endl;
 }

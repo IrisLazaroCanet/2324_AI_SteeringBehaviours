@@ -1,6 +1,7 @@
 ////SceneFlockingCollisionAvoidance.h
 #pragma once
 #include <vector>
+#include "Constants.h"
 #include "Scene.h"
 #include "Agent.h"
 
@@ -23,7 +24,7 @@ public:
 	const char* getTitle();
 
 private:
-	void UpdateConeHalfAngle(float increment);
+	void UpdateValue(float &value, float increment);
 	void UpdateAgentValues(int index);
 	std::vector<Agent*> agents;
 	Vector2D target;
