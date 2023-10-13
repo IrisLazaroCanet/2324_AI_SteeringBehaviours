@@ -18,13 +18,18 @@ public:
 	};
 
 	CollisionAvoidanceBehavior();
-	CollisionAvoidanceBehavior(const std::vector<Obstacle>& obstacles);
+	CollisionAvoidanceBehavior(const std::vector<Obstacle>& obstacles, float coneHalfAngle, float coneDistance);
 	~CollisionAvoidanceBehavior();
 
-	void setObstacles(const std::vector<Obstacle>& obstacles);
+	void SetObstacles(const std::vector<Obstacle>& obstacles);
+	void SetConeValues(float coneHalfAngle, float coneDistance);
 
 	virtual Vector2D CalculateForces(Agent* agent, Vector2D target, float dtime) override;
 	virtual Vector2D CalculateForces(Agent* agent, Agent* target, float dtime) override;
+
+private:
+	float coneHalfAngle;
+	float coneDistance;
 
 
 	// List of obstacles

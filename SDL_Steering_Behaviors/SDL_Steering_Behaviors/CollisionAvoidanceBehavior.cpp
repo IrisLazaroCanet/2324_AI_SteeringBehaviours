@@ -5,18 +5,27 @@ CollisionAvoidanceBehavior::CollisionAvoidanceBehavior()
 {
 }
 
-CollisionAvoidanceBehavior::CollisionAvoidanceBehavior(const std::vector<Obstacle>& obstacles)
+CollisionAvoidanceBehavior::CollisionAvoidanceBehavior(const std::vector<Obstacle>& obstacles, float coneHalfAngle, float coneDistance)
 {
     this->obstacles = obstacles;
+    this->coneHalfAngle = coneHalfAngle;
+    this->coneDistance = coneDistance;
+
 }
 
 CollisionAvoidanceBehavior::~CollisionAvoidanceBehavior()
 {
 }
 
-void CollisionAvoidanceBehavior::setObstacles(const std::vector<Obstacle>& obstacles)
+void CollisionAvoidanceBehavior::SetObstacles(const std::vector<Obstacle>& obstacles)
 {
     this->obstacles = obstacles;
+}
+
+void CollisionAvoidanceBehavior::SetConeValues(float coneHalfAngle, float coneDistance)
+{
+    this->coneHalfAngle = coneHalfAngle;
+    this->coneDistance = coneDistance;
 }
 
 Vector2D CollisionAvoidanceBehavior::CalculateForces(Agent* agent, Vector2D target, float dtime)
@@ -24,9 +33,10 @@ Vector2D CollisionAvoidanceBehavior::CalculateForces(Agent* agent, Vector2D targ
     // Get the list of obstacles (stored within the behavior class)
     std::vector<Obstacle>& obstacles = this->obstacles;
 
+    //FET AL CONSTRUCTOR DEL BEHAVIOR
     // Set the cone vision parameters (you may adjust these)
-    float coneHalfAngle = 180.0f;  // Half of the cone angle
-    float coneDistance = 200.0f; // Maximum distance to check for obstacles
+    //float coneHalfAngle = 180.0f;  // Half of the cone angle
+    //float coneDistance = 200.0f; // Maximum distance to check for obstacles
 
     // Get the agent's position and orientation
     Vector2D agentPosition = agent->getPosition();

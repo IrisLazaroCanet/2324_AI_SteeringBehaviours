@@ -107,5 +107,6 @@ public:
 		return (float)(atan2(velocity.y, velocity.x) * RAD2DEG);
 	}
 
+	SteeringBehavior* getBehavior() const { return steering_behavior; }
 
 };

@@ -7,6 +7,12 @@
 #include "FlockingBehavior.h"
 #include "CollisionAvoidanceBehavior.h"
 
+struct TweakableValues
+{
+	float coneHalfAngle;
+	float coneDistance;
+};
+
 class SceneFlockingCollisionAvoidance : public Scene
 {
 public:
@@ -16,12 +22,11 @@ public:
 	void draw();
 	const char* getTitle();
 
-
-
-
 private:
+	void UpdateConeHalfAngle(float increment);
+	void UpdateAgentValues(int index);
 	std::vector<Agent*> agents;
 	Vector2D target;
 	std::vector<CollisionAvoidanceBehavior::Obstacle> obstacles;
-
+	TweakableValues tweakableValues;
 };

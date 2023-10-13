@@ -10,14 +10,18 @@ SceneFlockingCollisionAvoidance::SceneFlockingCollisionAvoidance(int agentAmount
 	obstacles.push_back(CollisionAvoidanceBehavior::Obstacle(Vector2D(500, 300)));
 	obstacles.push_back(CollisionAvoidanceBehavior::Obstacle(Vector2D(800, 400)));
 
+	//Default values
+	tweakableValues.coneHalfAngle = 180.f;
+	tweakableValues.coneDistance = 200.f;
+
 
 	int x_max, x_min, y_max, y_min, xPosition, yPosition;
 	for (int i = 0; i < agentAmount; i++)
 	{
 		Agent* agent = new Agent(new PriorityBlendingBehavior({
-			new CollisionAvoidanceBehavior(obstacles),
-			//new FlockingBehavior(0.8f, 0.4f, 0.4f, 5.f)
-			new SeekBehavior()
+			new CollisionAvoidanceBehavior(obstacles, tweakableValues.coneHalfAngle, tweakableValues.coneDistance),
+			new FlockingBehavior(0.8f, 0.4f, 0.4f, 5.f)
+			//new SeekBehavior()
 			}));
 
 		x_max = 1275;
@@ -76,14 +80,25 @@ void SceneFlockingCollisionAvoidance::update(float dtime, SDL_Event* event)
 				agents[i]->setTarget(target);
 		}
 		break;
+	case SDL_KEYDOWN:
+	{
+		if(event->key.keysym.scancode == SDL_SCANCODE_Z)
+			UpdateConeHalfAngle(10.f);
+		if (event->key.keysym.scancode == SDL_SCANCODE_X)
+			UpdateConeHalfAngle(-10.f);
+		break;
+	}
 	default:
 		break;
 	}
 
 	for (int i = 0; i < (int)agents.size(); i++)
+	{
 		agents[i]->update(dtime, event);
+	}
 
-
+	for (int i = 0; i < (int)agents.size(); i++)
+		UpdateAgentValues(i);
 
 	//std::cout << obstacles[0].position.x << " " << obstacles[0].position.y << std::endl;
 
@@ -104,4 +119,20 @@ void SceneFlockingCollisionAvoidance::draw()
 const char* SceneFlockingCollisionAvoidance::getTitle()
 {
 	return "SDL Steering Behaviors :: Flocking with Collision avoidance Demo";
+}
+
+void SceneFlockingCollisionAvoidance::UpdateConeHalfAngle(float increment)
+{
+	tweakableValues.coneHalfAngle += increment;
+}
+
+void SceneFlockingCollisionAvoidance::UpdateAgentValues(int index)
+{
+	dynamic_cast<CollisionAvoidanceBehavior*>(
+		dynamic_cast<PriorityBlendingBehavior*>(agents[index]->getBehavior())->getBehavior(0)
+		)->SetConeValues(
+			tweakableValues.coneHalfAngle,
+			tweakableValues.coneDistance
+		);
+	std::cout << tweakableValues.coneHalfAngle << std::endl;
 }
