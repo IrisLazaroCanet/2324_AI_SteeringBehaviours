@@ -41,7 +41,8 @@ Vector2D CollisionAvoidanceBehavior::CalculateForces(Agent* agent, Vector2D targ
         Vector2D obstaclePosition = obstacle.position;
 
         // Check if the obstacle is inside the agent's cone of vision
-        if (Vector2DUtils::IsInsideCone(obstaclePosition, agentPosition, target, coneHalfAngle))
+        //if (Vector2DUtils::IsInsideCone(obstaclePosition, agentPosition, target, coneHalfAngle))
+        if (Vector2DUtils::IsInsideCone(obstaclePosition, agentPosition, agentPosition + coneDistance, coneHalfAngle))
         {
             // Calculate the distance from the agent to the obstacle
             float distanceToObstacle = Vector2D::Distance(agentPosition, obstaclePosition);
