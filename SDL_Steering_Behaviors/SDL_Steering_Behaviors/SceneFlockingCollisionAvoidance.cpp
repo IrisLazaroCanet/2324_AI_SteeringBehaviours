@@ -16,8 +16,8 @@ SceneFlockingCollisionAvoidance::SceneFlockingCollisionAvoidance(int agentAmount
 	{
 		Agent* agent = new Agent(new PriorityBlendingBehavior({
 			new CollisionAvoidanceBehavior(obstacles),
-			/*new FlockingBehavior(0.8f, 0.4f, 0.4f, 5.f)*/
-			new SeekBehavior()
+			new FlockingBehavior(0.8f, 0.4f, 0.4f, 5.f)
+			//new SeekBehavior()
 			}));
 
 		x_max = 1275;
@@ -94,6 +94,8 @@ void SceneFlockingCollisionAvoidance::draw()
 	draw_circle(TheApp::Instance()->getRenderer(), (int)target.x, (int)target.y, 15, 255, 0, 0, 255);
 
 	draw_circle(TheApp::Instance()->getRenderer(), (int)(obstacles[0].position.x), (int)(obstacles[0].position.y), 30, 255, 0, 0, 255);
+	draw_circle(TheApp::Instance()->getRenderer(), (int)(obstacles[1].position.x), (int)(obstacles[1].position.y), 30, 255, 0, 0, 255);
+	draw_circle(TheApp::Instance()->getRenderer(), (int)(obstacles[2].position.x), (int)(obstacles[2].position.y), 30, 255, 0, 0, 255);
 
 	for (int i = 0; i < (int)agents.size(); i++)
 		agents[i]->draw();

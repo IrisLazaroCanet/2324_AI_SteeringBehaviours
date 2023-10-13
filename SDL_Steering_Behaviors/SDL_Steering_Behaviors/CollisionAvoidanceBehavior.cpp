@@ -25,7 +25,7 @@ Vector2D CollisionAvoidanceBehavior::CalculateForces(Agent* agent, Vector2D targ
     std::vector<Obstacle>& obstacles = this->obstacles;
 
     // Set the cone vision parameters (you may adjust these)
-    float coneHalfAngle = 45.0f;  // Half of the cone angle
+    float coneHalfAngle = 180.0f;  // Half of the cone angle
     float coneDistance = 200.0f; // Maximum distance to check for obstacles
 
     // Get the agent's position and orientation
@@ -46,7 +46,6 @@ Vector2D CollisionAvoidanceBehavior::CalculateForces(Agent* agent, Vector2D targ
             // Calculate the distance from the agent to the obstacle
             float distanceToObstacle = Vector2D::Distance(agentPosition, obstaclePosition);
 
-            std::cout << "OBSTACLE IN VISION" << std::endl;
             // Update the nearest obstacle if this one is closer
             if (distanceToObstacle < shortestDistance)
             {
