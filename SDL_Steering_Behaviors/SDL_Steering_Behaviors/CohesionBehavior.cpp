@@ -6,6 +6,10 @@ CohesionBehavior::CohesionBehavior()
 
 }
 
+CohesionBehavior::~CohesionBehavior()
+{
+}
+
 Vector2D CohesionBehavior::CalculateForces(Agent* agent, Vector2D target, float dtime)
 {
     //1 Initialize variables to calculate the center of mass and agent count

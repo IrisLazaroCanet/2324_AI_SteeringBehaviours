@@ -1,7 +1,11 @@
 #include "SeparationBehavior.h"
 #include "Agent.h"
 
-SeparationBehavior::SeparationBehavior(float separationRadius)
+SeparationBehavior::SeparationBehavior()
+{
+}
+
+SeparationBehavior::~SeparationBehavior()
 {
 }
 

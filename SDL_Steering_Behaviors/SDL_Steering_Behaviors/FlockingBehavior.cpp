@@ -1,13 +1,13 @@
 #include "FlockingBehavior.h"
 
-FlockingBehavior::FlockingBehavior(float _cohesionWeight, float _separationWeight, float _alignmentWeight, float _separationRadius)
+FlockingBehavior::FlockingBehavior(float _cohesionWeight, float _separationWeight, float _alignmentWeight)
 {
 	//Weighted blending: flocking. Can also be done with priority and works just as fine
 	//We chose Weighted Blending for the example
 
 	weightedBlending = new WeightedBlendingBehavior({
 		{new CohesionBehavior(), _cohesionWeight},
-		{new SeparationBehavior(_separationRadius), _separationWeight},
+		{new SeparationBehavior(), _separationWeight},
 		{new AlignmentBehavior(), _alignmentWeight}
 		});
 }

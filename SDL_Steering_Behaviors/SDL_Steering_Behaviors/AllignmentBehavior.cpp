@@ -5,6 +5,10 @@ AlignmentBehavior::AlignmentBehavior()
 
 }
 
+AlignmentBehavior::~AlignmentBehavior()
+{
+}
+
 Vector2D AlignmentBehavior::CalculateForces(Agent* agent, Vector2D target, float dtime)
 {
     //1 Initialize variables to calculate average velocity and agent count

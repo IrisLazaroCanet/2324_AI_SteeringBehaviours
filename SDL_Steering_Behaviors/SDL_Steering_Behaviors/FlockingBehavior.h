@@ -13,13 +13,12 @@ class FlockingBehavior : public SteeringBehavior
 {
 private:
 	WeightedBlendingBehavior* weightedBlending;
-	PriorityBlendingBehavior* priorityBlending;
 	float cohesionWeight;
 	float separationWeight;
 	float alignmentWeight;
 
 public:
-	FlockingBehavior(float _cohesionWeight, float _separationWeight, float _alignmentWeight, float _separationRadius);
+	FlockingBehavior(float _cohesionWeight, float _separationWeight, float _alignmentWeight);
 	~FlockingBehavior();
 
 	virtual Vector2D CalculateForces(Agent* agent, Vector2D target, float dtime) override;

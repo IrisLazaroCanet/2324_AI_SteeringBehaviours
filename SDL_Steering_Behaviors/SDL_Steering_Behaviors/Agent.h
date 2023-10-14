@@ -25,17 +25,17 @@ class Agent
 	friend class CollisionAvoidanceBehavior;
 
 private:
-	SteeringBehavior* steering_behavior; // A pointer to the steering behavior used by the agent
-	Vector2D position; // Current position of the agent
-	Vector2D velocity; // Current velocity of the agent
-	Vector2D target;   // Target position for the agent
+	SteeringBehavior* steering_behavior;
+	Vector2D position; 
+	Vector2D velocity; 
+	Vector2D target;  
 
-	float mass;        // Mass of the agent
-	float orientation; // Orientation of the agent
-	float max_force;   // Maximum force the agent can apply
-	float max_velocity; // Maximum velocity the agent can reach
+	float mass;
+	float orientation;
+	float max_force;
+	float max_velocity;
 
-	SDL_Color color;   // Color for rendering the agent
+	SDL_Color color;
 
 	SDL_Texture* sprite_texture;
 	bool draw_sprite;
@@ -47,87 +47,42 @@ private:
 	float separationRadius;
 	float alignmentRadius;
 
-	std::vector<Agent*> neighbors; // List of neighboring agents
-	float maxForce; // Maximum force
+	std::vector<Agent*> neighbors;
 
 public:
 	Agent();
-	// Constructor that takes a steering behavior
 	Agent(SteeringBehavior* _steering_behavior);
-	// Destructor
 	~Agent();
 
-	// Accessor for the steering behavior
 	SteeringBehavior* Behavior();
 
 	///////////////////////GETTERS///////////////////////////
-	// Accessor for the agent's position
 	Vector2D getPosition();
-
-	// Accessor for the agent's target
 	Vector2D getTarget();
-
-	// Accessor for the agent's velocity
 	Vector2D getVelocity();
-
-	// Accessor for the agent's maximum velocity
 	float getMaxVelocity();
-
-
-	// Accessor for the maximum force the agent can apply
-	float getMaxForce() const { return maxForce; }
-
-	// Accessor for the list of neighbors
 	const std::vector<Agent*>& getNeighbors() const { return neighbors; }
-
-	// Accessor for the separation radius
 	float getSeparationRadius() const;
-
-	// Accessor for the alignment radius
 	float getAlignmentRadius() const { return alignmentRadius; }
-
-	// Set the cohesion, separation, and alignment radii
-	void setRadius(float _cohesionRadius, float _separationRadius, float _alignmentRadius);
-
-	// Accessor for the agent's orientation
 	float getOrientation() const
 	{
 		return (float)(atan2(velocity.y, velocity.x) * RAD2DEG);
 	}
-
-	// Accessor for the agent's steering behavior
 	SteeringBehavior* getBehavior() const { return steering_behavior; }
+	float getCohesionRadius() const { return cohesionRadius; }
 
 	///////////////////////SETTERS///////////////////////////
-	// Mutator for the agent's position
+	void setRadius(float _cohesionRadius, float _separationRadius, float _alignmentRadius);
 	void setPosition(Vector2D position);
-
-	// Mutator for the agent's target
 	void setTarget(Vector2D target);
-
-	// Mutator for the agent's velocity
 	void setVelocity(Vector2D velocity);
-
-	// Mutator for the agent's mass
 	void setMass(float mass);
-
-	// Mutator for the agent's color
 	void setColor(Uint8 r, Uint8 g, Uint8 b, Uint8 a);
 
 	///////////////////////OTHERS///////////////////////////
-	// Update function to update the agent's state
 	void update(float dtime, SDL_Event* event);
-
-	// Draw function to render the agent
 	void draw();
-
-	// Load a sprite texture for the agent
 	bool loadSpriteTexture(char* filename, int num_frames = 1);
-
-	// Accessor for the cohesion radius
-	float getCohesionRadius() const { return cohesionRadius; }
-
-	// Add a neighbor to the agent's list of neighbors
 	void addNeighbor(Agent* neighbor)
 	{
 		neighbors.push_back(neighbor);
