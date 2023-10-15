@@ -19,12 +19,9 @@ SceneFlockingCollisionAvoidance::SceneFlockingCollisionAvoidance(int agentAmount
 	{
 		Agent* agent = new Agent(new PriorityBlendingBehavior({
 			new CollisionAvoidanceBehavior(obstacles, tweakableValues.coneHalfAngle, tweakableValues.coneDistance),
-<<<<<<< Updated upstream
-			new FlockingBehavior(0.8f, 0.4f, 0.4f)
-=======
-			//new FlockingBehavior(0.8f, 0.4f, 0.4f, 5.f)
-			new FlockingBehavior(80.f, 500.f, 40.f, 100.f)
->>>>>>> Stashed changes
+			//new FlockingBehavior(0.8f, 0.4f, 0.4f)
+			//new FlockingBehavior(80.f, 500.f, 40.f)
+			new FlockingBehavior(80.f, 500.f, 50.f)
 			}));
 
 		x_max = 1275;
