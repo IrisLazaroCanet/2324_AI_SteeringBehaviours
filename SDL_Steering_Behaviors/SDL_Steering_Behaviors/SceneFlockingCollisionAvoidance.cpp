@@ -21,7 +21,7 @@ SceneFlockingCollisionAvoidance::SceneFlockingCollisionAvoidance(int agentAmount
 			new CollisionAvoidanceBehavior(obstacles, tweakableValues.coneHalfAngle, tweakableValues.coneDistance),
 			//new FlockingBehavior(0.8f, 0.4f, 0.4f)
 			//new FlockingBehavior(80.f, 500.f, 40.f)
-			new FlockingBehavior(80.f, 500.f, 50.f)
+			new FlockingBehavior(5.f, 20.f, 2.5f)
 			}));
 
 		x_max = 1275;

@@ -61,6 +61,7 @@ public:
 	Vector2D getTarget();
 	Vector2D getVelocity();
 	float getMaxVelocity();
+	float getMaxForce();
 	const std::vector<Agent*>& getNeighbors() const { return neighbors; }
 	float getSeparationRadius() const;
 	float getAlignmentRadius() const { return alignmentRadius; }
