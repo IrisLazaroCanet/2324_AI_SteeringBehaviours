@@ -27,7 +27,7 @@ Vector2D SeparationBehavior::CalculateForces(Agent* agent, Vector2D target, floa
             Vector2D separation = agent->getPosition() - neighbor->getPosition();
             //6 Weight the separation vector by the inverse of the distance
             separation /= distance;
-            separation *= 10000.0f;
+            //separation *= 10000.0f;
             //7 Accumulate the separation force
             separationForce += separation;
             neighborCount++;
