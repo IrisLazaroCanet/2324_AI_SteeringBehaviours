@@ -7,7 +7,7 @@ SceneFlocking::SceneFlocking(int agentAmount)
 	int x_max, x_min, y_max, y_min, xPosition, yPosition;
 	for (int i = 0; i < agentAmount; i++)
 	{
-		Agent* agent = new Agent(new FlockingBehavior(0.f, 0.f, 100.f));
+		Agent* agent = new Agent(new FlockingBehavior(5.f, 20.f, 2.5f));
 
 		x_max = 1275;
 		x_min = 5;
@@ -18,7 +18,7 @@ SceneFlocking::SceneFlocking(int agentAmount)
 		
 		agent->setPosition(Vector2D((float)xPosition, (float)yPosition));
 		agent->setTarget(Vector2D((float)xPosition, (float)yPosition));
-		agent->setRadius(1.f, 1.f, 1.f);
+		agent->setRadius(200.f, 100.f, 150.f);
 		agents.push_back(agent);
 
 		//Agents will go to the middle of the screen by default
